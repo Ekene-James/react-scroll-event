@@ -1,0 +1,49 @@
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+.container {
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .imgContainer {
+    overflow: hidden;
+    position: relative;
+    width: 550px;
+    height: 550px;
+
+    .img1 {
+      position: absolute;
+
+      height: 500px;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+
+      object-position: left center;
+      @include mobile {
+        height: 300px;
+      }
+    }
+    .img2 {
+      position: absolute;
+      height: 500px;
+      top: 0;
+      left: 0;
+      width: 0%;
+      transition: width 0.3s ease-in-out;
+      object-fit: cover;
+      object-position: left center;
+      @include mobile {
+        height: 300px;
+      }
+    }
+    @include mobile {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}

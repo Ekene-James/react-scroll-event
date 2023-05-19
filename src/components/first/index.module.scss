@@ -1,0 +1,19 @@
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+.container {
+  border-radius: 15px;
+  width: 100%;
+  height: 80vh;
+  background: url("./assets/firstA.jpg") center center/cover;
+  display: flex;
+  @include mobile {
+    width: 80%;
+    height: 60vw;
+
+    margin: auto;
+  }
+}
